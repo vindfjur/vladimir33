@@ -1,0 +1,88 @@
+---
+import data from '../data/attractions.json';
+const items = data.items;
+---
+
+<section id="architecture" class="section architecture">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Наследие</p>
+      <h2>Архитектурное наследие</h2>
+      <p class="section__lead">
+        Погрузитесь вглубь веков, исследуя величественное архитектурное наследие
+        Владимирской земли — захватывающие рассказы о прошлом, застывшие в камне.
+      </p>
+    </div>
+
+    <div class="attractions">
+      {
+        items.map((a) => (
+          <a class="att" href={`/articles/${a.slug}/`}>
+            <img class="att__img" src={a.image} alt={a.title} loading="lazy" />
+            <div class="att__body">
+              <h3 class="att__title">{a.title}</h3>
+              <p class="att__desc">{a.description}</p>
+              <span class="att__link">Узнать больше →</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .attractions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+  }
+  @media (max-width: 1000px) { .attractions { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .attractions { grid-template-columns: 1fr; } }
+  .att {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 380px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--c-white);
+    box-shadow: var(--shadow);
+    isolation: isolate;
+  }
+  .att__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform 0.6s ease;
+  }
+  .att::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(20, 14, 8, 0) 30%, rgba(20, 14, 8, 0.85) 100%);
+  }
+  .att:hover .att__img { transform: scale(1.06); }
+  .att__body { padding: 1.5rem; display: grid; gap: 0.5rem; }
+  .att__title { color: var(--c-white); text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6); }
+  .att__desc {
+    font-family: var(--font-serif);
+    font-size: var(--step--1);
+    color: color-mix(in srgb, var(--c-white) 88%, transparent);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  }
+  .att__link {
+    margin-top: 0.4rem;
+    font-weight: 700;
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    color: var(--c-gold);
+    transition: gap 0.2s;
+  }
+  .att:hover .att__link { color: var(--c-white); }
+</style>

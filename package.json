@@ -1,0 +1,32 @@
+{
+  "name": "vladimir33",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Туристический гид по Владимирской области",
+  "author": "vindfjur",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^5.0.7",
+    "@fontsource/forum": "^5.1.0",
+    "@fontsource/pt-sans": "^5.1.0",
+    "@fontsource/pt-serif": "^5.1.0",
+    "@keystatic/astro": "^5.1.0",
+    "@keystatic/core": "^0.5.50",
+    "astro": "^5.6.1",
+    "maplibre-gl": "^4.7.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "osmtogeojson": "^3.0.0-beta.5"
+  }
+}

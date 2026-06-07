@@ -1,0 +1,141 @@
+---
+import tilesData from '../data/tiles.json';
+const tiles = tilesData.items;
+---
+
+<section id="discoveries" class="section discoveries">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Знакомство</p>
+      <h2>10 открытий Владимира</h2>
+      <p class="section__lead">
+        Владимирская область — живое полотно, где переплетаются древность и
+        современность. Откройте десять граней этого края: от белокаменной
+        архитектуры и духовных центров до ремёсел и природных богатств.
+      </p>
+    </div>
+
+    <ul class="tiles">
+      {
+        tiles.map((t) => (
+          <li>
+            <button class="tile" type="button" data-flip aria-label={`${t.n} — ${t.topic}`}>
+              <span class="tile__inner">
+                <span class="tile__face tile__front">
+                  <span class="tile__n">{t.n}</span>
+                  <span class="tile__topic">{t.topic}</span>
+                  <span class="tile__hint" aria-hidden="true">подробнее →</span>
+                </span>
+                <span class="tile__face tile__back">
+                  <span class="tile__topic-sm">{t.topic}</span>
+                  <span class="tile__text">{t.text}</span>
+                </span>
+              </span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.tile[data-flip]').forEach((tile) => {
+    tile.addEventListener('click', () => tile.classList.toggle('is-flipped'));
+  });
+</script>
+
+<style>
+  .tiles {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  .tiles > li { perspective: 1000px; }
+
+  .tile {
+    display: block;
+    width: 100%;
+    height: 280px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+  }
+  .tile__inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .tile.is-flipped .tile__inner { transform: rotateY(180deg); }
+
+  .tile__face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--c-line);
+    box-shadow: var(--shadow-s);
+    backface-visibility: hidden;
+    text-align: left;
+    overflow: hidden;
+  }
+  .tile__front { background: var(--c-white); color: var(--c-ink); justify-content: flex-start; }
+  .tile__n {
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    line-height: 1;
+    color: var(--c-gold-deep);
+  }
+  .tile__topic {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    color: var(--c-ink);
+    margin-top: 0.35rem;
+  }
+  .tile__hint {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    font-size: 0.74rem;
+    color: var(--c-gold-deep);
+    font-weight: 700;
+  }
+
+  .tile__back {
+    background: linear-gradient(160deg, var(--c-gold), var(--c-gold-deep));
+    color: var(--c-white);
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+  .tile__topic-sm {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    line-height: 1.1;
+    color: var(--c-white);
+  }
+  .tile__text {
+    font-family: var(--font-serif);
+    font-size: 0.86rem;
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--c-white) 95%, transparent);
+    overflow-y: auto;
+  }
+  .tile:hover .tile__front { border-color: var(--c-gold); }
+
+  @media (max-width: 1040px) {
+    .tiles { grid-template-columns: repeat(2, 1fr); }
+    .tile { height: 240px; }
+  }
+  @media (max-width: 420px) {
+    .tile { height: 270px; }
+  }
+</style>

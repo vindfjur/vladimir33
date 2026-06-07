@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# deploy
+.vercel/
+
+# local tooling
+.claude/
+
+# logs / env
+*.log
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+desktop.ini
+.vercel

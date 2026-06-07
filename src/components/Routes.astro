@@ -1,0 +1,267 @@
+---
+import routesData from '../data/routes.json';
+const routes = routesData.items;
+---
+
+<section id="routes" class="section routes-section">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Путешествия</p>
+      <h2>Туристические маршруты</h2>
+      <p class="section__lead">
+        Три продуманных сценария — от пешей прогулки по Владимиру на один день до
+        четырёхдневного погружения в города Владимирской земли.
+      </p>
+    </div>
+
+    <div class="route-tabs" role="tablist" aria-label="Маршруты">
+      {
+        routes.map((r, i) => (
+          <button
+            class="route-tab"
+            role="tab"
+            data-route-tab={i}
+            data-active={i === 0 ? 'true' : 'false'}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            style={`--rc:${r.color}`}
+          >
+            <span class="route-tab__title">{r.title}</span>
+            <span class="route-tab__meta">{r.duration}</span>
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  {
+    routes.map((r, i) => (
+      <div class="route-panel" data-route-panel={i} data-active={i === 0 ? 'true' : 'false'}>
+        <p class="container route-summary">{r.summary}</p>
+        <div class="route-stage" style={`--rc:${r.color}`}>
+          <button class="route-arrow route-arrow--prev" type="button" data-scroll="-1" aria-label="Назад">‹</button>
+          <div class="route-timeline" data-timeline>
+            <div class="route-track">
+              {r.stops.map((s, n) => (
+                <div class="rcard-hang">
+                  <button class="rcard" data-flip type="button">
+                    <span class="rcard__inner">
+                      <span class="rcard__face rcard__front">
+                        <span class="rcard__num">{n + 1}</span>
+                        <span class="rcard__label">{s.label}</span>
+                        <span class="rcard__title">{s.title}</span>
+                        <span class="rcard__hint">подробнее →</span>
+                      </span>
+                      <span class="rcard__face rcard__back">
+                        <span class="rcard__back-title">{s.title}</span>
+                        <span class="rcard__text">{s.text}</span>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+          <button class="route-arrow route-arrow--next" type="button" data-scroll="1" aria-label="Вперёд">›</button>
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll<HTMLElement>('[data-route-tab]'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-route-panel]'));
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const idx = tab.dataset.routeTab;
+      tabs.forEach((t) => {
+        const on = t.dataset.routeTab === idx;
+        t.setAttribute('data-active', String(on));
+        t.setAttribute('aria-selected', String(on));
+      });
+      panels.forEach((p) => p.setAttribute('data-active', String(p.dataset.routePanel === idx)));
+      document.querySelectorAll('.rcard.is-flipped').forEach((c) => c.classList.remove('is-flipped'));
+      document.querySelectorAll<HTMLElement>('[data-timeline]').forEach((t) => (t.scrollLeft = 0));
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>('.rcard[data-flip]').forEach((card) => {
+    card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-scroll]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tl = btn.parentElement?.querySelector<HTMLElement>('[data-timeline]');
+      if (tl) tl.scrollBy({ left: Number(btn.dataset.scroll) * 280, behavior: 'smooth' });
+    });
+  });
+</script>
+
+<style>
+  .routes-section { background: var(--c-parchment-2); overflow: hidden; }
+
+  .route-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2.2rem;
+  }
+  .route-tab {
+    display: grid;
+    gap: 0.2rem;
+    text-align: left;
+    padding: 0.7rem 1.2rem;
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+    border-left: 4px solid var(--rc);
+    border-radius: var(--radius-s);
+    cursor: pointer;
+    font: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .route-tab:hover { transform: translateY(-2px); box-shadow: var(--shadow-s); }
+  .route-tab[data-active='true'] { background: var(--rc); border-color: var(--rc); box-shadow: var(--shadow-s); }
+  .route-tab[data-active='true'] .route-tab__title,
+  .route-tab[data-active='true'] .route-tab__meta { color: var(--c-white); }
+  .route-tab__title { font-family: var(--font-display); font-size: var(--step-1); color: var(--c-ink); }
+  .route-tab__meta { font-size: var(--step--1); color: var(--c-ink-soft); letter-spacing: 0.03em; }
+
+  .route-panel { display: none; }
+  .route-panel[data-active='true'] { display: block; }
+  .route-summary {
+    max-width: 70ch;
+    margin-inline: auto;
+    margin-bottom: 1.4rem;
+    text-align: center;
+    font-family: var(--font-serif);
+    color: var(--c-ink-soft);
+  }
+
+  .route-stage { position: relative; }
+  .route-arrow {
+    position: absolute;
+    top: 46%;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--c-ink);
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-s);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .route-arrow:hover { transform: translateY(-50%) scale(1.08); background: var(--c-parchment); }
+  .route-arrow--prev { left: 0.4rem; transform: translateY(-50%); }
+  .route-arrow--next { right: 0.4rem; transform: translateY(-50%); }
+
+  .route-timeline {
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 0.5rem 0 1.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .route-timeline::-webkit-scrollbar { display: none; }
+
+  .route-track {
+    position: relative;
+    display: flex;
+    width: max-content;
+    padding: 0 max(2.5rem, calc((100vw - var(--maxw)) / 2));
+    --route-card-w: 240px;
+    --route-card-gap: 1.6rem;
+  }
+
+  .rcard-hang {
+    position: relative;
+    flex: 0 0 var(--route-card-w);
+    height: 232px;
+    margin-right: var(--route-card-gap);
+    scroll-snap-align: center;
+  }
+  .rcard-hang:last-child { margin-right: 0; }
+
+  .rcard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .rcard__inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .rcard.is-flipped .rcard__inner { transform: perspective(1200px) rotateY(180deg); }
+  .rcard__face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    backface-visibility: hidden;
+    box-shadow: var(--shadow);
+    text-align: left;
+  }
+  .rcard__front {
+    background: linear-gradient(160deg, color-mix(in srgb, var(--rc) 92%, #000 0%), color-mix(in srgb, var(--rc) 70%, #000 18%));
+    color: var(--c-white);
+    justify-content: flex-end;
+    gap: 0.3rem;
+  }
+  .rcard__num {
+    position: absolute;
+    top: 1rem;
+    left: 1.3rem;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+  }
+  .rcard__label {
+    font-weight: 700;
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    color: color-mix(in srgb, var(--c-white) 85%, transparent);
+  }
+  .rcard__title { font-family: var(--font-display); font-size: var(--step-1); line-height: 1.1; }
+  .rcard__hint { margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.8; }
+
+  .rcard__back {
+    background: var(--c-white);
+    color: var(--c-ink);
+    transform: rotateY(180deg);
+    border: 1px solid var(--c-line);
+    gap: 0.5rem;
+    overflow-y: auto;
+  }
+  .rcard__back-title { font-family: var(--font-display); font-size: var(--step-1); color: var(--rc); }
+  .rcard__text { font-family: var(--font-serif); font-size: 0.92rem; line-height: 1.45; color: var(--c-ink-soft); }
+
+  @media (max-width: 560px) {
+    .route-tab { flex: 1 1 100%; }
+    .route-arrow { display: none; }
+  }
+</style>

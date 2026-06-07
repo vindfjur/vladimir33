@@ -1,0 +1,58 @@
+---
+import infoData from '../data/info.json';
+const cards = infoData.items;
+---
+
+<section id="info" class="section info-section">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Полезное</p>
+      <h2>Как добраться</h2>
+      <p class="section__lead">
+        Спланируйте дорогу во Владимирскую область — на машине, поезде, автобусе
+        или такси. А где поесть и переночевать, подскажут блоки ниже.
+      </p>
+    </div>
+
+    <div class="info-cards">
+      {
+        cards.map((card) => (
+          <article class="info-card">
+            <h4>{card.title}</h4>
+            <p>{card.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .info-groups { display: grid; gap: clamp(2rem, 5vw, 3rem); }
+  .info-group__title {
+    font-size: var(--step-2);
+    color: var(--c-gold-deep);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--c-line);
+  }
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+  }
+  @media (max-width: 760px) {
+    .info-cards { grid-template-columns: 1fr; }
+  }
+  .info-card {
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    box-shadow: var(--shadow-s);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .info-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .info-card h4 { font-family: var(--font-display); font-size: var(--step-1); margin-bottom: 0.5rem; }
+  .info-card p { font-family: var(--font-serif); color: var(--c-ink-soft); }
+</style>

@@ -1,0 +1,157 @@
+---
+interface Place {
+  name: string;
+  detail: string | null;
+  city: string | null;
+  website: string | null;
+}
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  accent: string;
+  shuffleLabel: string;
+  pool: Place[];
+  alt?: boolean;
+}
+const { eyebrow, title, lead, accent, shuffleLabel, pool, alt = false } = Astro.props;
+---
+
+<section class:list={['section', 'places', { 'places--alt': alt }]} style={`--accent:${accent}`}>
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      <p class="section__lead">{lead}</p>
+    </div>
+
+    <div class="places__list" data-pool={JSON.stringify(pool)} aria-live="polite"></div>
+
+    <div class="places__actions">
+      <button class="places__shuffle" type="button" data-shuffle>
+        <span class="places__dice" aria-hidden="true">🎲</span> {shuffleLabel}
+      </button>
+      <a class="places__all" href="#map">Все места на карте →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  type Place = { name: string; detail: string | null; city: string | null; website: string | null };
+
+  document.querySelectorAll<HTMLElement>('[data-pool]').forEach((box) => {
+    const pool: Place[] = JSON.parse(box.dataset.pool || '[]');
+    const COUNT = 10;
+
+    const sample = () => {
+      const a = [...pool];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a.slice(0, COUNT);
+    };
+
+    const cardHTML = (p: Place, i: number) => {
+      const name = p.website
+        ? `<a href="${p.website}" target="_blank" rel="noopener">${p.name}</a>`
+        : `<span>${p.name}</span>`;
+      const meta = [p.city, p.detail].filter(Boolean).join(' · ');
+      return `<article class="pcard" style="--i:${i}">
+          <span class="pcard__name">${name}</span>
+          <span class="pcard__meta">${meta}</span>
+        </article>`;
+    };
+
+    const paint = () => {
+      box.innerHTML = sample().map(cardHTML).join('');
+    };
+
+    const reshuffle = () => {
+      box.classList.add('is-out');
+      setTimeout(() => {
+        paint();
+        box.classList.remove('is-out');
+      }, 240);
+    };
+
+    paint();
+    box.closest('section')?.querySelector('[data-shuffle]')?.addEventListener('click', reshuffle);
+  });
+</script>
+
+<style>
+  .places--alt { background: var(--c-parchment-2); }
+
+  .places__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+    transition: opacity 0.24s ease, transform 0.24s ease;
+  }
+  .places__list.is-out { opacity: 0; transform: translateY(8px); }
+
+  :global(.pcard) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+    border-left: 3px solid var(--accent, var(--c-gold));
+    border-radius: var(--radius-s);
+    box-shadow: var(--shadow-s);
+    animation: pcardIn 0.45s cubic-bezier(0.4, 0.2, 0.2, 1) both;
+    animation-delay: calc(var(--i) * 45ms);
+  }
+  @keyframes pcardIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  :global(.pcard__name) { font-family: var(--font-display); font-size: var(--step-1); color: var(--c-ink); }
+  :global(.pcard__name a) { color: var(--c-ink); }
+  :global(.pcard__name a:hover) { color: var(--c-gold-deep); }
+  :global(.pcard__meta) {
+    flex: none;
+    font-size: 0.78rem;
+    color: var(--c-ink-soft);
+    text-align: right;
+  }
+
+  .places__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+  }
+  .places__shuffle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    font: inherit;
+    font-weight: 700;
+    color: var(--c-white);
+    background: var(--accent, var(--c-gold));
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: var(--shadow-s);
+    transition: transform 0.2s, filter 0.2s;
+  }
+  .places__shuffle:hover { transform: translateY(-2px); filter: brightness(1.06); }
+  .places__shuffle:active .places__dice { animation: diceRoll 0.5s ease; }
+  .places__dice { display: inline-block; }
+  @keyframes diceRoll {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+  }
+  .places__all { font-weight: 700; font-size: var(--step--1); }
+
+  @media (max-width: 640px) {
+    .places__list { grid-template-columns: 1fr; }
+  }
+</style>

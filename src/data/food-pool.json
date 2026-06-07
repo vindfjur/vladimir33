@@ -1,0 +1,484 @@
+{
+  "items": [
+    {
+      "name": "Гостиный двор",
+      "detail": "ресторан",
+      "city": "Суздаль",
+      "website": "http://suzdal-dvor.ru/"
+    },
+    {
+      "name": "Сарай",
+      "detail": "кафе",
+      "city": "Петушки",
+      "website": "Saray33.ru"
+    },
+    {
+      "name": "Самурай",
+      "detail": "суши",
+      "city": "Владимир",
+      "website": "http://www.samurai-vladimir.ru"
+    },
+    {
+      "name": "Гнездо пекаря",
+      "detail": "русская кухня",
+      "city": "Суздаль",
+      "website": "http://bakernest.com/place.html"
+    },
+    {
+      "name": "Эгоист",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://эгоист33.рф"
+    },
+    {
+      "name": "Глоб",
+      "detail": "кафе",
+      "city": "Киржач",
+      "website": "www.kafe-glob.ru"
+    },
+    {
+      "name": "Шеш-беш",
+      "detail": "турецкая кухня",
+      "city": "Владимир",
+      "website": "https://vl.shesh-besh37.ru"
+    },
+    {
+      "name": "Хачапурия",
+      "detail": "грузинская кухня",
+      "city": "Владимир",
+      "website": "http://xn--33-6kca4b2bhxov7g.xn--p1ai/"
+    },
+    {
+      "name": "Пеперони",
+      "detail": "итальянская кухня",
+      "city": "Владимир",
+      "website": "https://vladimgroup.ru/"
+    },
+    {
+      "name": "FOG Hookah x GastroBar",
+      "detail": "азиатская кухня",
+      "city": "Владимир",
+      "website": "https://instagram.com/foghookahgastrobar"
+    },
+    {
+      "name": "Токио",
+      "detail": "суши",
+      "city": "Владимир",
+      "website": "https://sushi33.ru/"
+    },
+    {
+      "name": "Князь Владимир",
+      "detail": "ресторан",
+      "city": "Боголюбово",
+      "website": "https://princevladimir.net/"
+    },
+    {
+      "name": "Lucky Duck",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://luckyduck-bistro.ru/"
+    },
+    {
+      "name": "Рассвет",
+      "detail": "кафе",
+      "city": "Ковров",
+      "website": "http://kafe-Rassvet.ru/"
+    },
+    {
+      "name": "Prague",
+      "detail": "ресторан",
+      "city": "Петушки",
+      "website": "https://prague33.ru/"
+    },
+    {
+      "name": "Coffeeshop Company",
+      "detail": "кофейня",
+      "city": "Владимир",
+      "website": "http://www.coffeeshopcompany.ru"
+    },
+    {
+      "name": "Кофеин",
+      "detail": "кофейня",
+      "city": "Владимир",
+      "website": "http://www.koffein.ru"
+    },
+    {
+      "name": "Четыре пивовара",
+      "detail": "бар",
+      "city": "Владимир",
+      "website": "https://vk.com/4brewers"
+    },
+    {
+      "name": "Терем",
+      "detail": "ресторан",
+      "city": "Боголюбово",
+      "website": "https://www.restterem.ru/"
+    },
+    {
+      "name": "Мон кафе",
+      "detail": "кафе",
+      "city": "Петушки",
+      "website": "http://cafe.mon-otel.ru/"
+    },
+    {
+      "name": "Прага",
+      "detail": "паб",
+      "city": "Владимир",
+      "website": "https://vk.com/pivoteka_praha"
+    },
+    {
+      "name": "Кофейня el Caramelo",
+      "detail": "кафе",
+      "city": "Муром",
+      "website": "http://www.elcaramelo.ru"
+    },
+    {
+      "name": "Бисквит",
+      "detail": "кафе",
+      "city": "Александров",
+      "website": "http://biskvit33.ru"
+    },
+    {
+      "name": "Острый козырек",
+      "detail": "паб",
+      "city": "Владимир",
+      "website": "http://vk.com/peakyblinderpub33"
+    },
+    {
+      "name": "Пиццерия «Соренто»",
+      "detail": "пицца",
+      "city": "Муром",
+      "website": "https://sorento.pizza/murom.html"
+    },
+    {
+      "name": "Огурец",
+      "detail": "кофейня",
+      "city": "Суздаль",
+      "website": "https://suzdalogurec.ru/"
+    },
+    {
+      "name": "Тоня и ее пельмени",
+      "detail": "кофейня",
+      "city": "Владимир",
+      "website": "https://instagram.com/tonya_i_pelmeny"
+    },
+    {
+      "name": "PlovSamsa project",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://samsaplov.ru/"
+    },
+    {
+      "name": "Ташир-пицца",
+      "detail": "пицца",
+      "city": "Муром",
+      "website": "https://www.tashirpizza.ru"
+    },
+    {
+      "name": "Гусли",
+      "detail": "ресторан",
+      "city": "Александров",
+      "website": "http://ресторангусли.рф"
+    },
+    {
+      "name": "Чайный домик",
+      "detail": "кафе",
+      "city": "Покров",
+      "website": "http://www.vikon.ru"
+    },
+    {
+      "name": "Грильмания",
+      "detail": "ресторан",
+      "city": "Владимир",
+      "website": "http://grill33.ru"
+    },
+    {
+      "name": "33 пингвина",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://33pingvina.ru/"
+    },
+    {
+      "name": "Кабуки 2.0",
+      "detail": "азиатская кухня",
+      "city": "Владимир",
+      "website": "https://vladimgroup.ru"
+    },
+    {
+      "name": "Иван Чайная",
+      "detail": "кафе",
+      "city": "Суздаль",
+      "website": "http://ivanteahouse.tilda.ws/ivanteahouse"
+    },
+    {
+      "name": "ПитСтоп Бургер",
+      "detail": "кафе",
+      "city": "Муром",
+      "website": "http://питстоп33.рф/"
+    },
+    {
+      "name": "Пицца То-То",
+      "detail": "кафе",
+      "city": "Вязники",
+      "website": "https://vyazniki.totopizza.ru/"
+    },
+    {
+      "name": "Buffet",
+      "detail": "бар",
+      "city": "Муром",
+      "website": "https://buffetbar.ru/"
+    },
+    {
+      "name": "ВилкиНет",
+      "detail": "кафе",
+      "city": "Муром",
+      "website": "https://murom.vilkinet.ru/"
+    },
+    {
+      "name": "ГрафинЪ",
+      "detail": "русская кухня",
+      "city": "Суздаль",
+      "website": "http://grafin.restaurant"
+    },
+    {
+      "name": "Фарфор",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://farfor.ru/"
+    },
+    {
+      "name": "Трапезная \"У Ильи у Муромца\"",
+      "detail": "русская кухня",
+      "city": "Муром",
+      "website": "https://vk.com/trapeznaj"
+    },
+    {
+      "name": "Рынок на Студеной",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://www.marketnagore.ru/"
+    },
+    {
+      "name": "Гастромаркет Рынок На Студеной",
+      "detail": "ресторан",
+      "city": "Владимир",
+      "website": "https://marketnagore.ru/"
+    },
+    {
+      "name": "Русское подворье",
+      "detail": "ресторан",
+      "city": "Суздаль",
+      "website": "https://rp-suzdal.ru"
+    },
+    {
+      "name": "Котокафе Мурчелло",
+      "detail": "кафе",
+      "city": "Муром",
+      "website": "https://www.instagram.com/murchello_catcafe/"
+    },
+    {
+      "name": "Глобус",
+      "detail": "ресторан",
+      "city": "Боголюбово",
+      "website": "https://www.globus.ru/"
+    },
+    {
+      "name": "Ложки Кружки",
+      "detail": "русская кухня",
+      "city": "Александров",
+      "website": "https://lozhkikruzhki.ru/"
+    },
+    {
+      "name": "Маяк",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "http://Lighthouse-coffee.ru"
+    },
+    {
+      "name": "Ермак",
+      "detail": "средиземноморская",
+      "city": "Муром",
+      "website": "https://ermak-ploschad-1100-letija-muroma.clients.site/"
+    },
+    {
+      "name": "Репейник",
+      "detail": "ресторан",
+      "city": "Киржач",
+      "website": "https://re-pei.ru"
+    },
+    {
+      "name": "Подстава паб",
+      "detail": "паб",
+      "city": "Владимир",
+      "website": "https://vk.com/podstavapub"
+    },
+    {
+      "name": "Намотай",
+      "detail": "кафе",
+      "city": "Александров",
+      "website": "https://namotaj.ru"
+    },
+    {
+      "name": "Смокер-бар Imagine Food",
+      "detail": "американская кухня",
+      "city": "Владимир",
+      "website": "http://www.instagram/imagine.event"
+    },
+    {
+      "name": "Дом Русского чаепития",
+      "detail": "русская кухня",
+      "city": "Суздаль",
+      "website": "https://suzdal-dvor.ru/"
+    },
+    {
+      "name": "X.Lovelli",
+      "detail": "ресторан",
+      "city": "Муром",
+      "website": "https://xlovelli.ru"
+    },
+    {
+      "name": "Полли",
+      "detail": "ресторан",
+      "city": "Владимир",
+      "website": "https://pollyrestaurant.ru/"
+    },
+    {
+      "name": "FoodFix",
+      "detail": "кафе",
+      "city": "Ковров",
+      "website": "https://vk.com/foodfix_33"
+    },
+    {
+      "name": "Север-Метрополь",
+      "detail": "кафе",
+      "city": "Владимир",
+      "website": "https://sever-metropol.ru/"
+    },
+    {
+      "name": "Муромская калачная",
+      "detail": "кафе",
+      "city": "Муром",
+      "website": "http://муромский-калач.рф"
+    },
+    {
+      "name": "Алькапоне Пицца",
+      "detail": "ресторан",
+      "city": "Киржач",
+      "website": "https://алькапонепицца.рф"
+    },
+    {
+      "name": "Империал",
+      "detail": "русская кухня",
+      "city": "Суздаль",
+      "website": "https://imperial-suzdal.ru/"
+    },
+    {
+      "name": "Лимпомпо",
+      "detail": "местная кухня",
+      "city": "Суздаль",
+      "website": "http://limpovillage.ru"
+    },
+    {
+      "name": "Пит стоп",
+      "detail": "кафе",
+      "city": "Муром",
+      "website": "http://питстоп33.рф/"
+    },
+    {
+      "name": "Династия",
+      "detail": "кафе",
+      "city": "Юрьев-Польский",
+      "website": "https://www.dinastiya33.com/"
+    },
+    {
+      "name": "Чайка",
+      "detail": "ресторан",
+      "city": "Муром",
+      "website": "https://chaika-murom.ru/"
+    },
+    {
+      "name": "Покровский мельник",
+      "detail": "ресторан",
+      "city": "Покров",
+      "website": null
+    },
+    {
+      "name": "Теремок",
+      "detail": "кафе",
+      "city": "Покров",
+      "website": null
+    },
+    {
+      "name": "Лунный камень",
+      "detail": "ресторан",
+      "city": "Судогда",
+      "website": null
+    },
+    {
+      "name": "Каретный двор",
+      "detail": "кафе",
+      "city": "Судогда",
+      "website": null
+    },
+    {
+      "name": "Бархан",
+      "detail": "ресторан",
+      "city": "Владимир",
+      "website": null
+    },
+    {
+      "name": "Кафе",
+      "detail": "кафе",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "Кабак",
+      "detail": "ресторан",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "На Пинаихе",
+      "detail": "ресторан",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "Славянский бар",
+      "detail": "ресторан",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "Сокол",
+      "detail": "ресторан",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "БурБон",
+      "detail": "бар",
+      "city": "Владимир",
+      "website": null
+    },
+    {
+      "name": "Синеборье",
+      "detail": "кафе",
+      "city": "Судогда",
+      "website": null
+    },
+    {
+      "name": "Фортуна",
+      "detail": "кафе",
+      "city": "Александров",
+      "website": null
+    },
+    {
+      "name": "Рожков",
+      "detail": "ресторан",
+      "city": "Собинка",
+      "website": null
+    }
+  ]
+}

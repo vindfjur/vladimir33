@@ -1,0 +1,221 @@
+---
+import slidesData from '../data/slides.json';
+const slides = slidesData.items;
+---
+
+<section class="hero" data-hero>
+  <div class="hero__stage">
+    {
+      slides.map((s, i) => (
+        <div
+          class="hero__slide"
+          data-hero-slide
+          data-active={i === 0 ? 'true' : 'false'}
+          style={`background-image: url('${s.image}')`}
+        />
+      ))
+    }
+    <div class="hero__veil"></div>
+  </div>
+
+  <div class="container hero__content">
+    {
+      slides.map((s, i) => (
+        <article class="hero__panel" data-hero-panel data-active={i === 0 ? 'true' : 'false'}>
+          <p class="eyebrow hero__eyebrow">Золотое кольцо России</p>
+          <h1 class="hero__title">{s.title}</h1>
+          <p class="hero__text">
+            <strong>{s.lead}</strong> {s.body}
+          </p>
+        </article>
+      ))
+    }
+
+    <div class="hero__dots" role="tablist" aria-label="Слайды">
+      {
+        slides.map((_, i) => (
+          <button
+            class="hero__dot"
+            data-hero-dot={i}
+            data-active={i === 0 ? 'true' : 'false'}
+            aria-label={`Слайд ${i + 1}`}
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#discoveries" aria-label="Листать вниз">
+    <span></span>
+  </a>
+</section>
+
+<script>
+  const root = document.querySelector('[data-hero]');
+  if (root) {
+    const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-hero-slide]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-hero-panel]'));
+    const dots = Array.from(root.querySelectorAll<HTMLElement>('[data-hero-dot]'));
+    let i = 0;
+    let timer: number | undefined;
+
+    const show = (n: number) => {
+      i = (n + slides.length) % slides.length;
+      [slides, panels, dots].forEach((group) =>
+        group.forEach((el, k) => el.setAttribute('data-active', String(k === i)))
+      );
+    };
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const start = () => {
+      if (reduce) return;
+      stop();
+      timer = window.setInterval(() => show(i + 1), 9000);
+    };
+    const stop = () => timer && window.clearInterval(timer);
+
+    dots.forEach((dot, n) =>
+      dot.addEventListener('click', () => {
+        show(n);
+        start();
+      })
+    );
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+
+    let sx: number | null = null;
+    let sy: number | null = null;
+    root.addEventListener('touchstart', (e) => {
+      sx = e.changedTouches[0].screenX;
+      sy = e.changedTouches[0].screenY;
+    }, { passive: true });
+    root.addEventListener('touchend', (e) => {
+      if (sx === null || sy === null) return;
+      const dx = e.changedTouches[0].screenX - sx;
+      const dy = e.changedTouches[0].screenY - sy;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        show(dx < 0 ? i + 1 : i - 1);
+        start();
+      }
+      sx = sy = null;
+    }, { passive: true });
+
+    start();
+  }
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--c-white);
+    overflow: hidden;
+  }
+  .hero__stage { position: absolute; inset: 0; }
+  .hero__slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 1.4s ease, transform 9s linear;
+  }
+  .hero__slide[data-active='true'] {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .hero__veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(20, 14, 8, 0.45) 0%,
+      rgba(20, 14, 8, 0.15) 35%,
+      rgba(20, 14, 8, 0.75) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: clamp(3rem, 8vh, 6rem);
+    padding-top: 6rem;
+  }
+  .hero__panel {
+    display: none;
+    max-width: 46rem;
+    animation: heroIn 0.9s ease both;
+  }
+  .hero__panel[data-active='true'] { display: block; }
+  .hero__eyebrow {
+    color: var(--c-gold);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
+  }
+  .hero__title {
+    font-size: var(--step-4);
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+    margin-block: 0.4rem 1.1rem;
+  }
+  .hero__text {
+    font-family: var(--font-serif);
+    font-size: var(--step-1);
+    line-height: 1.55;
+    max-width: 40rem;
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+  }
+  .hero__text strong { color: var(--c-gold); font-weight: 700; }
+
+  .hero__dots { display: flex; gap: 0.6rem; margin-top: 2rem; }
+  .hero__dot {
+    width: 30px;
+    height: 4px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, width 0.3s;
+  }
+  .hero__dot[data-active='true'] { background: var(--c-gold); width: 46px; }
+  .hero__dot { touch-action: manipulation; }
+
+  .hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 1.4rem;
+    translate: -50% 0;
+    z-index: 2;
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 14px;
+  }
+  .hero__scroll span {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    translate: -50% 0;
+    width: 4px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--c-white);
+    animation: scrollCue 1.6s ease infinite;
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollCue {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    40% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 14px); }
+  }
+
+  @media (pointer: coarse), (max-width: 700px) {
+    .hero__scroll { display: none; }
+  }
+</style>

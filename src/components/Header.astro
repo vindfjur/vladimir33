@@ -1,0 +1,217 @@
+---
+import { navSections } from '../site';
+---
+
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="#top" aria-label="Владимир-33, на главную">
+      <span class="brand__mark">В</span>
+      <span class="brand__name">Владимир<span class="brand__sub">·33</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <button
+        class="nav__toggle"
+        aria-expanded="false"
+        aria-controls="nav-list"
+        data-nav-toggle
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-label">Меню</span>
+      </button>
+
+      <ul class="nav__list" id="nav-list" data-nav-list>
+        {
+          navSections.map((s) => (
+            <li>
+              <a class="nav__link" href={`#${s.id}`} data-nav-link={s.id}>
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const list = document.querySelector<HTMLElement>('[data-nav-list]');
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]'));
+
+  const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const closeMenu = () => {
+    list?.classList.remove('is-open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  };
+  toggle?.addEventListener('click', () => {
+    const open = list?.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(!!open));
+  });
+  links.forEach((l) => l.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => e.key === 'Escape' && closeMenu());
+
+  const byId = new Map(links.map((l) => [l.dataset.navLink, l]));
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          links.forEach((l) => l.classList.remove('is-active'));
+          byId.get(entry.target.id)?.classList.add('is-active');
+        }
+      });
+    },
+    { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+  );
+  navSectionsIds().forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) spy.observe(el);
+  });
+
+  function navSectionsIds() {
+    return links.map((l) => l.dataset.navLink!).filter(Boolean);
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    background: color-mix(in srgb, var(--c-parchment) 86%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+  }
+  .site-header.is-scrolled {
+    border-bottom-color: var(--c-line);
+    box-shadow: var(--shadow-s);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: min(100% - 2.5rem, var(--maxw));
+  }
+
+  .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--c-ink); }
+  .brand__mark {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    color: var(--c-white);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    line-height: 1;
+    box-shadow: var(--shadow-s);
+  }
+  .brand__name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.02em; }
+  .brand__sub { color: var(--c-gold-deep); }
+
+  .nav__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.6rem, 2vw, 1.6rem);
+    padding: 0;
+  }
+  .nav__link {
+    position: relative;
+    color: var(--c-ink-soft);
+    font-weight: 700;
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-block: 0.4rem;
+  }
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--c-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav__link:hover,
+  .nav__link.is-active { color: var(--c-ink); }
+  .nav__link.is-active::after,
+  .nav__link:hover::after { transform: scaleX(1); }
+
+  .nav__toggle { display: none; }
+
+  @media (max-width: 760px) {
+    .nav__toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: none;
+      border: 1px solid var(--c-line);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      font: inherit;
+      font-weight: 700;
+      font-size: var(--step--1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-ink);
+      cursor: pointer;
+    }
+    .nav__toggle-bar {
+      position: relative;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+    }
+    .nav__toggle-bar::before,
+    .nav__toggle-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+    }
+    .nav__toggle-bar::before { top: -6px; }
+    .nav__toggle-bar::after { top: 6px; }
+
+    .nav__list {
+      position: absolute;
+      top: var(--header-h);
+      right: 0;
+      left: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--c-parchment);
+      border-bottom: 1px solid var(--c-line);
+      box-shadow: var(--shadow);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .nav__list.is-open { max-height: 70vh; }
+    .nav__list li { border-top: 1px solid var(--c-line); }
+    .nav__link {
+      display: block;
+      padding: 1rem 1.6rem;
+      width: 100%;
+    }
+    .nav__link::after { display: none; }
+  }
+</style>

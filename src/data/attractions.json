@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "slug": "golden_gate",
+      "title": "Золотые врата Владимира",
+      "description": "Встречайте рассвет за этими стенами: символ княжеской Руси, во всей её величавой красе.",
+      "image": "/images/attractions/golden-gates.webp"
+    },
+    {
+      "slug": "suzdal_kremlin",
+      "title": "Суздальский Кремль",
+      "description": "Прогулка по мостовой тысячелетий: раскройте тайны средневековья и ощутите прикосновение к истории.",
+      "image": "/images/attractions/suzdal-kremlin.webp"
+    },
+    {
+      "slug": "spaso_preobrazhensky_monastery",
+      "title": "«Спасский что на Бору»",
+      "description": "Легенды о силе и духовном пути: монастырь на древних холмах, где веками бьёт пульс истории.",
+      "image": "/images/attractions/spaso-preobrazhensky.webp"
+    },
+    {
+      "slug": "pokrova_on_nerl",
+      "title": "Покрова на Нерли",
+      "description": "Слияние времени и красоты: архитектурный шедевр оживает на лоне прекрасной природы.",
+      "image": "/images/attractions/pokrova-na-nerli.webp"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Tiles from '../components/Tiles.astro';
+import Attractions from '../components/Attractions.astro';
+import MapSection from '../components/MapSection.astro';
+import Routes from '../components/Routes.astro';
+import Info from '../components/Info.astro';
+import RandomPlaces from '../components/RandomPlaces.astro';
+import Gallery from '../components/Gallery.astro';
+import foodData from '../data/food-pool.json';
+import stayData from '../data/stay-pool.json';
+---
+
+<Base>
+  <Hero />
+  <Tiles />
+  <Attractions />
+  <MapSection />
+  <Routes />
+  <Info />
+  <RandomPlaces
+    eyebrow="Проголодались?"
+    title="Где перекусить"
+    lead="Несколько заведений наугад — из сотен кафе и ресторанов области, отмеченных на нашей карте. Не выбрали? Перемешайте список и пробуйте снова."
+    accent="var(--c-terracotta)"
+    shuffleLabel="Перемешать"
+    pool={foodData.items}
+  />
+  <RandomPlaces
+    eyebrow="Где переночевать"
+    title="Где остановиться"
+    lead="Отели, гостевые дома и базы отдыха области — несколько вариантов наугад. Перемешайте, чтобы увидеть другие."
+    accent="var(--c-green)"
+    shuffleLabel="Другие варианты"
+    pool={stayData.items}
+    alt
+  />
+  <Gallery />
+</Base>

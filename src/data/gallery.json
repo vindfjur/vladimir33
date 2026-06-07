@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "title": "Троицкая церковь",
+      "description": "Церковь 1740 года с уникальным внешним видом.",
+      "image": "/images/gallery/troitskaya-church.webp"
+    },
+    {
+      "title": "Церковь Успения Богородицы",
+      "description": "Памятник XVII века и центр старообрядчества.",
+      "image": "/images/gallery/uspeniya-church.webp"
+    },
+    {
+      "title": "Церковь Воскресения в Муроме",
+      "description": "Духовный центр с многовековой историей.",
+      "image": "/images/gallery/voskreseniya-church-murom.webp"
+    },
+    {
+      "title": "Церковь Святого Розария",
+      "description": "Неоготический католический храм конца XIX века.",
+      "image": "/images/gallery/rozariy-church.webp"
+    },
+    {
+      "title": "Замок Храповицкого",
+      "description": "Мистический замок с аномальными явлениями.",
+      "image": "/images/gallery/khrapovitsky-castle.webp"
+    },
+    {
+      "title": "Дом с рыцарями",
+      "description": "Необычное здание с атрибутами средневековья.",
+      "image": "/images/gallery/knight-house.webp"
+    },
+    {
+      "title": "Муромская ладья",
+      "description": "Арт-объект рядом с монастырём.",
+      "image": "/images/gallery/murom-ladya.webp"
+    },
+    {
+      "title": "Заполицкая ГЭС",
+      "description": "Руины ГЭС, преобразованные в культурное пространство.",
+      "image": "/images/gallery/zapolitsy-ges.webp"
+    },
+    {
+      "title": "Каменка",
+      "description": "Живописный уголок у реки Каменка.",
+      "image": "/images/gallery/kamenka-river.webp"
+    },
+    {
+      "title": "Гастромаркет «Рынок»",
+      "description": "Летний пейзаж уличной зоны «Рынка».",
+      "image": "/images/gallery/gastromarket.webp"
+    },
+    {
+      "title": "Фонтан в «Липках»",
+      "description": "Один из старейших фонтанов города, 1866 год.",
+      "image": "/images/gallery/lipki-fountain.webp"
+    },
+    {
+      "title": "Кукольный театр",
+      "description": "Театр кукол с 1973 года.",
+      "image": "/images/gallery/puppet-theatre.webp"
+    }
+  ]
+}

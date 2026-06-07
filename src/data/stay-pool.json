@@ -1,0 +1,484 @@
+{
+  "items": [
+    {
+      "name": "M7",
+      "detail": "отель",
+      "city": "Гороховец",
+      "website": "http://www.motel-m7.ru/"
+    },
+    {
+      "name": "Орион",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://orionhotel.ru/"
+    },
+    {
+      "name": "Гостевой дом Анастасии",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "http://pavlovdvor.ru/"
+    },
+    {
+      "name": "Вознесенская Слобода",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://vsloboda.ru/"
+    },
+    {
+      "name": "Клязьма",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://www.klyazma-hotel.ru/"
+    },
+    {
+      "name": "Эльотель",
+      "detail": "отель",
+      "city": "Ковров",
+      "website": "http://www.elotel.ru/"
+    },
+    {
+      "name": "Мономах",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://www.monomahhotel.ru/"
+    },
+    {
+      "name": "Заря",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://zarya-hotel.ru/"
+    },
+    {
+      "name": "Владимир",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://vladimir-hotel.ru/"
+    },
+    {
+      "name": "Владимирский дворик",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "www.vldvorik.ru"
+    },
+    {
+      "name": "Эрланген",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://erlangen.ru/"
+    },
+    {
+      "name": "Mon Plaisir",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://www.vladimir-monplaisir.ru/"
+    },
+    {
+      "name": "Алексеевская усадьба",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://alexeevskaya.ru/"
+    },
+    {
+      "name": "Очаг",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "http://www.motel-ochag.ru"
+    },
+    {
+      "name": "Пилигрим",
+      "detail": "хостел",
+      "city": "Владимир",
+      "website": "http://www.piligrimhostel.ru"
+    },
+    {
+      "name": "Покров",
+      "detail": "мотель",
+      "city": "Покров",
+      "website": "https://motelpokrov.ru/"
+    },
+    {
+      "name": "Доброе",
+      "detail": "отель",
+      "city": "Боголюбово",
+      "website": "http://www.profcentr.virtvladimir.ru"
+    },
+    {
+      "name": "Князь Владимир",
+      "detail": "отель",
+      "city": "Боголюбово",
+      "website": "https://princevladimir.net/"
+    },
+    {
+      "name": "Отель для двоих",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://sutki-vladimir.ru/"
+    },
+    {
+      "name": "Русская деревня",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://www.rusderevnya.ru/"
+    },
+    {
+      "name": "Горшиха",
+      "detail": "отель",
+      "city": "Кольчугино",
+      "website": "gorshiha33.ru"
+    },
+    {
+      "name": "Русская изба",
+      "detail": "хостел",
+      "city": "Суздаль",
+      "website": "https://suzdalizba.ru/"
+    },
+    {
+      "name": "Кремлёвская",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "http://kreml.izmuroma.ru"
+    },
+    {
+      "name": "Мон отель",
+      "detail": "отель",
+      "city": "Петушки",
+      "website": "https://mon-otel.ru/"
+    },
+    {
+      "name": "Русь-Отель",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "http://rushotel33.ru/"
+    },
+    {
+      "name": "Хостел Эверест",
+      "detail": "хостел",
+      "city": "Владимир",
+      "website": "https://www.vladimirhostel.com/"
+    },
+    {
+      "name": "Пинаиха",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": "https://pinaiha.ru/"
+    },
+    {
+      "name": "Золотое кольцо",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://vladimir.amaks-hotels.ru"
+    },
+    {
+      "name": "Риони",
+      "detail": "отель",
+      "city": "Ковардицы",
+      "website": "http://rionimurom.ru/hotel/"
+    },
+    {
+      "name": "Мещера",
+      "detail": "отель",
+      "city": "Гусь-Хрустальный",
+      "website": "http://www.guscrystal-hotel.ru/"
+    },
+    {
+      "name": "Отель Есенин",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "https://hotel-esenin.ru/"
+    },
+    {
+      "name": "Слобода",
+      "detail": "хостел",
+      "city": "Александров",
+      "website": "http://хостел-слобода.рф"
+    },
+    {
+      "name": "Медный двор",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": "https://hotel-md.ru/"
+    },
+    {
+      "name": "Бильярдный клуб \"Пирамида\" с теннисом и Мини Гостиницей",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "https://vk.com/piramida_9"
+    },
+    {
+      "name": "Южный дворик",
+      "detail": "хостел",
+      "city": "Муром",
+      "website": "https://muromdvorik.com/"
+    },
+    {
+      "name": "Долгорукий",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://www.dolgorukii.com/"
+    },
+    {
+      "name": "Три Бани",
+      "detail": "гостевой дом",
+      "city": "Боголюбово",
+      "website": "https://33bani.ru/"
+    },
+    {
+      "name": "Купеческий ДворЪ",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "https://www.купеческийдвор33.рф/"
+    },
+    {
+      "name": "Светлые Окна",
+      "detail": "апартаменты",
+      "city": "Муром",
+      "website": "https://www.booking.com/hotel/ru/apartamenty-svetlye-okna-v-istoricheskom-tsentre.ru.html"
+    },
+    {
+      "name": "Petra eco village",
+      "detail": "гостевой дом",
+      "city": "Карабаново",
+      "website": "https://www.petraecovillage.com/"
+    },
+    {
+      "name": "Богдарня",
+      "detail": "отель",
+      "city": "Петушки",
+      "website": "https://bogdarnya.ru/"
+    },
+    {
+      "name": "Зарядье",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": "https://gdzaryadye.ru/"
+    },
+    {
+      "name": "Sokroma Замок на Никольской",
+      "detail": "апартаменты",
+      "city": "Владимир",
+      "website": "https://sokroma.ru"
+    },
+    {
+      "name": "Sokroma Византия",
+      "detail": "апартаменты",
+      "city": "Владимир",
+      "website": "https://sokroma.ru/"
+    },
+    {
+      "name": "Sokroma Исторический Владимир",
+      "detail": "апартаменты",
+      "city": "Владимир",
+      "website": "https://sokroma.ru/"
+    },
+    {
+      "name": "Sokroma Владимирская Русь",
+      "detail": "апартаменты",
+      "city": "Владимир",
+      "website": "https://sokroma.ru/"
+    },
+    {
+      "name": "Sokroma Бриз",
+      "detail": "апартаменты",
+      "city": "Владимир",
+      "website": "https://sokroma.ru/"
+    },
+    {
+      "name": "Станция 33",
+      "detail": "гостевой дом",
+      "city": "Боголюбово",
+      "website": "https://www.tripadvisor.ru/Hotel_Review-g12564815-d15009629-Reviews-Loft_Hotel_Stantsiya_33-Borisovskoye_Vladimir_Oblast_Central_Russia.html"
+    },
+    {
+      "name": "Пушкарская слобода",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "http://www.pushkarka.ru/"
+    },
+    {
+      "name": "Пестово Подворье",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://pestovohotel.ru/"
+    },
+    {
+      "name": "Царедворье",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": "https://tsaredvorye.ru/"
+    },
+    {
+      "name": "Антиквар-отель мещанина Охлонина",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://ohlonin.ru/"
+    },
+    {
+      "name": "Vania Rooms",
+      "detail": "отель",
+      "city": "Владимир",
+      "website": "https://vaniahotel.ru/"
+    },
+    {
+      "name": "Дом Ершова",
+      "detail": "отель",
+      "city": "Гороховец",
+      "website": "https://www.domeshova.ru"
+    },
+    {
+      "name": "Дом Шиголевых",
+      "detail": "гостевой дом",
+      "city": "Киржач",
+      "website": "https://domshigolevyh.ru/"
+    },
+    {
+      "name": "Спутник",
+      "detail": "отель",
+      "city": "Киржач",
+      "website": "http://gk-sputnik.ru/"
+    },
+    {
+      "name": "Х.Room",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "https://xroomhotel.ru/"
+    },
+    {
+      "name": "Вишнёвый Сад",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": "http://www.cherrygarden.ru/"
+    },
+    {
+      "name": "Шерна",
+      "detail": "отель",
+      "city": "Киржач",
+      "website": "http://hotel-sherna33.ru"
+    },
+    {
+      "name": "Гостевой дом Красовских",
+      "detail": "гостевой дом",
+      "city": "Киржач",
+      "website": "https://domkrasovskih.ru"
+    },
+    {
+      "name": "Ажур",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://veliy-hotels.com/ru/suzdal/about/"
+    },
+    {
+      "name": "Николаевский посад",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://nposad.ru/"
+    },
+    {
+      "name": "Godzillas Hostel",
+      "detail": "хостел",
+      "city": "Суздаль",
+      "website": "http://godzillashostel.com/suzdal/"
+    },
+    {
+      "name": "Мадемуазель Пшёнкина",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": "http://suzdal.house/"
+    },
+    {
+      "name": "Берёзовый рай",
+      "detail": "шале",
+      "city": "Покров",
+      "website": "https://berez-rai.ru/"
+    },
+    {
+      "name": "Русский лес",
+      "detail": "отель",
+      "city": "Покров",
+      "website": "http://les-kirzhach.ru"
+    },
+    {
+      "name": "Водолей",
+      "detail": "отель",
+      "city": "Гороховец",
+      "website": "http://motel-vodoley.ru/"
+    },
+    {
+      "name": "Родники",
+      "detail": "отель",
+      "city": "Карабаново",
+      "website": "https://www.rodniki-hotel.ru/"
+    },
+    {
+      "name": "Лада",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "https://www.lada-murom.ru/"
+    },
+    {
+      "name": "Русич",
+      "detail": "отель",
+      "city": "Муром",
+      "website": "http://rusich-murom.ru"
+    },
+    {
+      "name": "Веранда",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://veranda-suzdal.ru/"
+    },
+    {
+      "name": "Глэмпинг А-Frame | Суздаль",
+      "detail": "гостевой дом",
+      "city": "Кибол",
+      "website": "https://kibol.ru"
+    },
+    {
+      "name": "ГТК \"Суздаль\"",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": "https://gtksuzdal.ru/"
+    },
+    {
+      "name": "База отдыха \"Усадьба Владимир\"",
+      "detail": "шале",
+      "city": "Лакинск",
+      "website": "https://osovec.ru/"
+    },
+    {
+      "name": "Центральная база Собинского охотхозяйства",
+      "detail": "шале",
+      "city": "Лакинск",
+      "website": "http://www.sobinskoegooh.com"
+    },
+    {
+      "name": "Покровский мельник",
+      "detail": "отель",
+      "city": "Покров",
+      "website": null
+    },
+    {
+      "name": "Встреча",
+      "detail": "мотель",
+      "city": "Вязники",
+      "website": null
+    },
+    {
+      "name": "Сокол",
+      "detail": "отель",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "Гостевой дом Любимцевой",
+      "detail": "гостевой дом",
+      "city": "Суздаль",
+      "website": null
+    },
+    {
+      "name": "Синеборье",
+      "detail": "мотель",
+      "city": "Судогда",
+      "website": null
+    }
+  ]
+}
