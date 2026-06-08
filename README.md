@@ -9,7 +9,7 @@
 маршруты, подборки кафе и гостиниц, фотогалерея и статьи‑презентации
 с русскими фолк‑узорами.
 
-[**🌐 Открыть сайт → vladimir33.vercel.app**](https://vladimir33.vercel.app)
+[**🌐 Открыть сайт → vladimir.vindfjur.art**](https://vladimir.vindfjur.art)
 
 ![Astro](https://img.shields.io/badge/Astro-5-BC52EE?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
