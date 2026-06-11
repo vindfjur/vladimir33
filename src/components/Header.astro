@@ -5,8 +5,8 @@ import { navSections } from '../site';
 <header class="site-header" data-header>
   <div class="container site-header__inner">
     <a class="brand" href="#top" aria-label="Владимир-33, на главную">
-      <span class="brand__mark">В</span>
-      <span class="brand__name">Владимир<span class="brand__sub">·33</span></span>
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">ладимир<span class="brand__sub">·33</span></span>
     </a>
 
     <nav class="nav" aria-label="Основная навигация">
@@ -103,19 +103,14 @@ import { navSections } from '../site';
     width: min(100% - 2.5rem, var(--maxw));
   }
 
-  .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--c-ink); }
+  .brand { display: inline-flex; align-items: center; gap: 0.18rem; color: var(--c-ink); }
   .brand__mark {
-    display: grid;
-    place-items: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
     background: var(--c-gold);
-    color: var(--c-white);
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    line-height: 1;
-    box-shadow: var(--shadow-s);
+    mask: url('/favicon/favicon.svg') center / contain no-repeat;
+    -webkit-mask: url('/favicon/favicon.svg') center / contain no-repeat;
   }
   .brand__name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.02em; }
   .brand__sub { color: var(--c-gold-deep); }
